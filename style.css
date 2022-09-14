@@ -5,6 +5,9 @@
     --right-bg-color:rgba(77, 85, 62, 0.7);
     --left-btn-color:rgba(87,84,236,1);
     --right-btn-color:rgb(77, 121, 46);
+    --hover-width: 75%;
+    --other-width:25%;
+    --speed: 1000ms;
 }
 
 *{
@@ -98,4 +101,38 @@ h1 {
     background:url('https://cdn.carbuzz.com/gallery-images/1600/590000/900/590910.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.split.right,
+.split.left,
+.split.right::before,
+.split.left::before {
+    transition: all var(--speed) ease-in-out;
+}
+
+.hover-left .left{
+    width: var(--hover-width); 
+}
+
+.hover-left .right {
+    width: var(--other-width)
+}
+
+.hover-right .left{
+    width: var(--other-width);   
+}
+
+.hover-right .right {
+    width: var(--hover-width)
+}
+
+@media(max-width:800px){
+    h1{
+        font-size: 2rem;
+        top:30%;
+    }
+    .btn{
+        padding:1.2rem;
+        width:12rem;
+    }
 }
